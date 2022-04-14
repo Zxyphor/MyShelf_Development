@@ -20,31 +20,6 @@ namespace MyShelf
             }
         }
 
-        protected void btnCreateProfile_Click(object sender, EventArgs e)
-        {
-            if (Page.IsValid)
-            {
-                AddToDatabase(txtEmail.Text, txtUsername.Text, txtPassword.Text);
-                UpdateTable();
-            }
-        }
-
-        protected void AddToDatabase(String email, String username, String password)
-        {
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = WebConfigurationManager.ConnectionStrings["MyShelfDB"].ConnectionString;
-
-            SqlCommand addUser = new SqlCommand();
-            addUser.Connection = conn;
-
-            addUser.CommandText = "INSERT INTO UserInfo (Email, Password) VALUES ('" + email + "', '" + password + "'); " +
-                "INSERT INTO ProfileInfo (Username) VALUES ('" + username + "')";
-
-            conn.Open();
-            addUser.ExecuteNonQuery();
-            conn.Close();
-        }
-
         protected void UpdateTable()
         {
             SqlConnection conn = new SqlConnection();
