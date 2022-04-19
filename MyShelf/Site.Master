@@ -45,7 +45,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="bg-primary" runat="server" href="~/">MyShelf Sign Up</a>
+                    <a class="bg-primary" runat="server" href="https://localhost:44366/About">MyShelf</a>
                 </div>
                 <div class="bg-primary">
 <%--                    <ul class="nav navbar-nav">
