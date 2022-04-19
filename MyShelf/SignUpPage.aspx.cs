@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Web.Configuration;
 using System.Data;
+using System.Web.Security;
 
 namespace MyShelf
 {
@@ -14,14 +15,14 @@ namespace MyShelf
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-
+            UpdateTable();
 		}
 
         protected void btnCreateProfile_Click(object sender, EventArgs e)
         {
             if (Page.IsValid)
             {
-                AddToDatabase(txtEmail.Text, txtUsername.Text, txtPassword.Text);
+                AddToDatabase(txtEmail.Text.Trim(), txtUsername.Text.Trim(), txtPassword.Text.Trim());
                 UpdateTable();
             }
         }
@@ -34,7 +35,11 @@ namespace MyShelf
             SqlCommand addUser = new SqlCommand();
             addUser.Connection = conn;
 
-            addUser.CommandText = "INSERT INTO UserInfo (Email, Password) VALUES ('" + email + "', '" + password + "'); " +
+#pragma warning disable CS0618 // Type or member is obsolete
+            string passwordHash = FormsAuthentication.HashPasswordForStoringInConfigFile(password, "SHA1");
+#pragma warning restore CS0618 // Type or member is obsolete
+
+            addUser.CommandText = "INSERT INTO UserInfo (Email, Password) VALUES ('" + email + "', '" + passwordHash + "'); " +
                 "INSERT INTO ProfileInfo (Username) VALUES ('" + username + "')";
 
             conn.Open();
@@ -64,14 +69,8 @@ namespace MyShelf
 
         protected void btnDebugTable_Click(object sender, EventArgs e)
         {
-            if (gvDebugTable.Visible)
-            {
-                gvDebugTable.Visible = false;
-            }
-            else
-            {
-                gvDebugTable.Visible = true;
-            }
+            gvDebugTable.Visible = !gvDebugTable.Visible;
+            UpdateTable();
         }
     }
 }

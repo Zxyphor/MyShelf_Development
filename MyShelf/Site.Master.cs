@@ -39,16 +39,5 @@ namespace MyShelf
             gvDebugTable.DataBind();
             conn.Close();
         }
-
-        protected void btnDebugTable_Click(object sender, EventArgs e)
-        {
-            if (gvDebugTable.Visible)
-            {
-                gvDebugTable.Visible = false;
-            } else
-            {
-                gvDebugTable.Visible = true;
-            }
-        }
     }
 }
