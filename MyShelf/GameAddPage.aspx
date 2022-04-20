@@ -8,7 +8,7 @@
             <asp:TextBox ID="txtGameInput" runat="server"></asp:TextBox>
         </div>
         <div class="col-md-12">
-            <asp:Button ID="btnAddEntry" runat="server" Text="Add" OnClick="btnAddEntry_Click" />
+            <asp:Button ID="btnAddEntry" runat="server" Text="Add" OnClick="btnAddEntry_Click" CssClass="btn btn-primary" />
         </div><br />
         <div class="col-md-12">
             <asp:GridView ID="gvGameList" runat="server" AutoGenerateColumns="False" CssClass="table table-hover" OnRowCommand="gvGameList_RowCommand" OnRowDataBound="gvGameList_RowDataBound">
