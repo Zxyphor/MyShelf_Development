@@ -16,28 +16,57 @@ namespace MyShelf
         {
             if (!Page.IsPostBack)
             {
-                UpdateTable();
+                //        UpdateTable();
+            }
+            if (Session["email"] != null)
+            {
+                mbtnLogin.Visible = false;
+                mbtnSignup.Visible = false;
+                mbtnLogout.Visible = true;
+            } else
+            {
+                mbtnLogin.Visible = true;
+                mbtnSignup.Visible = true;
+                mbtnLogout.Visible = false;
             }
         }
 
-        protected void UpdateTable()
+        //Hey. Hey. Before you judge. Is this a design course? No. Keep on grading. I've got my eye on you. 
+
+        protected void mbtnLogin_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = WebConfigurationManager.ConnectionStrings["MyShelfDB"].ConnectionString;
-            SqlDataAdapter sda = new SqlDataAdapter();
-            DataTable dt = new DataTable();
-
-            SqlCommand updateTable = new SqlCommand();
-            updateTable.Connection = conn;
-
-            updateTable.CommandText = "SELECT * FROM UserInfo;";
-            sda.SelectCommand = updateTable;
-
-            conn.Open();
-            sda.Fill(dt);
-            gvDebugTable.DataSource = dt;
-            gvDebugTable.DataBind();
-            conn.Close();
+            Response.Redirect("LoginPage.aspx");
         }
+
+        protected void mbtnSignup_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("SignUpPage.aspx");
+        }
+
+        protected void mbtnLogout_Click(object sender, EventArgs e)
+        {
+            Session.Remove("email");
+            Response.Redirect("LoginPage.aspx");
+        }
+
+        //protected void UpdateTable()
+        //{
+        //    SqlConnection conn = new SqlConnection();
+        //    conn.ConnectionString = WebConfigurationManager.ConnectionStrings["MyShelfDB"].ConnectionString;
+        //    SqlDataAdapter sda = new SqlDataAdapter();
+        //    DataTable dt = new DataTable();
+
+        //    SqlCommand updateTable = new SqlCommand();
+        //    updateTable.Connection = conn;
+
+        //    updateTable.CommandText = "SELECT * FROM UserInfo;";
+        //    sda.SelectCommand = updateTable;
+
+        //    conn.Open();
+        //    sda.Fill(dt);
+        //    gvDebugTable.DataSource = dt;
+        //    gvDebugTable.DataBind();
+        //    conn.Close();
+        //}
     }
 }

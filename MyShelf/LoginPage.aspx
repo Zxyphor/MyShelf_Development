@@ -13,9 +13,12 @@
                     <asp:Label ID="lblPassword" runat="server" Text="Password"></asp:Label>
                 </div>
                 <div class="col-md-10">
-                    <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvPassword" runat="server" ControlToValidate="txtPassword" ErrorMessage="Enter the password"></asp:RequiredFieldValidator>
                 </div>
-
+                <div class="col-md-12">
+                    <asp:Button ID="btnLogIn" runat="server" Text="Log In" OnClick="btnLogIn_Click" />
+                    <asp:Label ID="lblLoginFail" runat="server" Text="Login failed" Visible="false"></asp:Label>
+                </div>
             </div>
 </asp:Content>

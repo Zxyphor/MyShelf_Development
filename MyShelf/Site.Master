@@ -49,8 +49,12 @@
                 </div>
                 <div class="bg-secondary">
                     <ul class="nav navbar-nav">
-                        <li><a href="https://localhost:44366/LoginPage">Login Page</a></li>
-                        <li><a href="https://localhost:44366/SignUpPage">Sign-Up Page</a></li>
+<%--                        <li><a runat="server" href="~/LoginPage">Login Page</a></li>
+                        <li><a runat="server" href="~/SignUpPage">Sign-Up Page</a></li>
+                        <li><a runat="server" href="~/LogOut">Log Out</a></li>--%>
+                        <li><asp:Button ID="mbtnLogin" runat="server" Text="Login" CausesValidation="False" OnClick="mbtnLogin_Click" /></li>
+                        <li><asp:Button ID="mbtnSignup" runat="server" Text="Signup" CausesValidation="False" OnClick="mbtnSignup_Click" /></li>
+                        <li><asp:Button ID="mbtnLogout" runat="server" Text="Logout" CausesValidation="False" OnClick="mbtnLogout_Click" /></li>
 <%--                        <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>--%>
                     </ul>
@@ -64,8 +68,8 @@
 
             <hr />
             <footer>
-                <asp:GridView ID="gvDebugTable" runat="server" Visible="False">
-                </asp:GridView>
+<%--                <asp:GridView ID="gvDebugTable" runat="server" Visible="False">
+                </asp:GridView>--%>
                 <div class="bg-primary">
                 <p>&nbsp;&nbsp;&nbsp; &copy; <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>- MyShelf
                 </p>

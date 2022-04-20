@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h2 class="left-justify">Sign-Up!</h2>
              <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-2">
                     <asp:Label ID="lblEmail" runat="server" Text="Email"></asp:Label>
                     </div>
                 <div class="col-md-10">
@@ -10,21 +10,21 @@
                     <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail" ErrorMessage="Invalid email address" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                     <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail" ErrorMessage="Enter an email"></asp:RequiredFieldValidator>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-2">
                     <asp:Label ID="lblUsername" runat="server" Text="Username"></asp:Label>
                 </div>
                 <div class="col-md-10">
                     <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvUsername" runat="server" ControlToValidate="txtUsername" ErrorMessage="Enter a username"></asp:RequiredFieldValidator>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-2">
                     <asp:Label ID="lblPassword" runat="server" Text="Password"></asp:Label>
                 </div>
                 <div class="col-md-10">
                     <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox> 
                     <asp:RequiredFieldValidator ID="rfvPassword" runat="server" ControlToValidate="txtPassword" ErrorMessage="Enter a password"></asp:RequiredFieldValidator>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-2">
                     <asp:Label ID="lblPasswordconfirm" runat="server" Text="Confirm Password"></asp:Label>
                 </div>
                 <div class="col-md-10">
@@ -37,7 +37,7 @@
                     <asp:Button ID="btnCreateProfile" runat="server" OnClick="btnCreateProfile_Click" Text="Sign Up!" />
                     <asp:Button ID="btnDebugTable" runat="server" Text="Show/Hide" OnClick="btnDebugTable_Click" CommandName="btnDebugTable_Click" />
                 </div>
-            </div>
-                <asp:GridView ID="gvDebugTable" runat="server">
+            </div> <br/> 
+                <asp:GridView ID="gvDebugTable" runat="server" Visible="false">
                 </asp:GridView>
 </asp:Content>
