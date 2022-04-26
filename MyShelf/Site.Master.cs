@@ -20,13 +20,15 @@ namespace MyShelf
             }
             if (Session["email"] != null)
             {
-                mbtnLogin.Visible = false;
                 mbtnSignup.Visible = false;
                 mbtnLogout.Visible = true;
-            } else
+                mbtnLogin.Visible = false;
+            }
+            else
             {
-                mbtnLogin.Visible = true;
-                mbtnSignup.Visible = true;
+                //mbtnLogin.Visible = true;
+                mbtnLogin.Visible = false;
+                mbtnSignup.Visible = false;
                 mbtnLogout.Visible = false;
             }
         }
@@ -45,28 +47,18 @@ namespace MyShelf
 
         protected void mbtnLogout_Click(object sender, EventArgs e)
         {
-            Session.Remove("email");
-            Response.Redirect("LoginPage.aspx");
+            //Session.Remove("email");
+            //Response.Redirect("LoginPage.aspx");
+            if (mbtnLogout.Text == "Login")
+            {
+                Response.Redirect("LoginPage.aspx");
+            }
+            else
+            {
+                Session.Remove("email");
+                Response.Redirect("LoginPage.aspx");
+            }
         }
 
-        //protected void UpdateTable()
-        //{
-        //    SqlConnection conn = new SqlConnection();
-        //    conn.ConnectionString = WebConfigurationManager.ConnectionStrings["MyShelfDB"].ConnectionString;
-        //    SqlDataAdapter sda = new SqlDataAdapter();
-        //    DataTable dt = new DataTable();
-
-        //    SqlCommand updateTable = new SqlCommand();
-        //    updateTable.Connection = conn;
-
-        //    updateTable.CommandText = "SELECT * FROM UserInfo;";
-        //    sda.SelectCommand = updateTable;
-
-        //    conn.Open();
-        //    sda.Fill(dt);
-        //    gvDebugTable.DataSource = dt;
-        //    gvDebugTable.DataBind();
-        //    conn.Close();
-        //}
     }
 }

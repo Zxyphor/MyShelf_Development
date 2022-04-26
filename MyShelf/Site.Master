@@ -1,4 +1,5 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="MyShelf.SiteMaster" %>
+﻿
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="MyShelf.SiteMaster" %>
 
 <!DOCTYPE html>
 
@@ -6,13 +7,13 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %>MyShelf</title>
+    <title><%: Page.Title %> MyShelf </title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
-    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
@@ -37,26 +38,23 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-        <div class="bg-secondary">
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
-                <div class="bg-primary">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    <a class="bg-primary" runat="server" href="https://localhost:44366/About">MyShelf</a>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/">MyShelf</a>
                 </div>
-                <div class="bg-secondary">
+                
+                <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-<%--                        <li><a runat="server" href="~/LoginPage">Login Page</a></li>
-                        <li><a runat="server" href="~/SignUpPage">Sign-Up Page</a></li>
-                        <li><a runat="server" href="~/LogOut">Log Out</a></li>--%>
-                        <li><asp:Button ID="mbtnLogin" runat="server" Text="Login" CausesValidation="False" OnClick="mbtnLogin_Click" /></li>
+                         <li><asp:Button ID="mbtnLogin" runat="server" Text="Login" CausesValidation="False" OnClick="mbtnLogin_Click" /></li>
                         <li><asp:Button ID="mbtnSignup" runat="server" Text="Signup" CausesValidation="False" OnClick="mbtnSignup_Click" /></li>
                         <li><asp:Button ID="mbtnLogout" runat="server" Text="Logout" CausesValidation="False" OnClick="mbtnLogout_Click" /></li>
-<%--                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>--%>
                     </ul>
                 </div>
             </div>
@@ -64,16 +62,9 @@
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-            <br />
-
             <hr />
             <footer>
-<%--                <asp:GridView ID="gvDebugTable" runat="server" Visible="False">
-                </asp:GridView>--%>
-                <div class="bg-primary">
-                <p>&nbsp;&nbsp;&nbsp; &copy; <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>- MyShelf
-                </p>
-                </div>
+                <p>&copy; <%: DateTime.Now.Year %> - MyShelf</p>
             </footer>
         </div>
 

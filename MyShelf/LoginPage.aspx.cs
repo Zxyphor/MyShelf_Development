@@ -14,7 +14,11 @@ namespace MyShelf
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+           
+        }
+        protected void btnSignup_Click(object sender, EventArgs e) 
+        {
+            Response.Redirect("SignUpPage.aspx");
         }
 
         protected void btnLogIn_Click(object sender, EventArgs e)

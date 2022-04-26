@@ -72,5 +72,9 @@ namespace MyShelf
             gvDebugTable.Visible = !gvDebugTable.Visible;
             UpdateTable();
         }
+        protected void btnLogin_Click(object sender, EventArgs e) 
+        {
+            Response.Redirect("LoginPage.aspx");
+        }
     }
 }
