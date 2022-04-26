@@ -18,17 +18,17 @@
                 </div>
                 <br />
                 <div class="col-md-12">
-                    <asp:Button ID="btnLogIn" runat="server" Text="Log In" OnClick="btnLogIn_Click" />
+                    <asp:Button ID="btnLogIn" runat="server" Text="Log In" OnClick="btnLogIn_Click" CssClass="btn btn-primary" />
 
                     <asp:Label ID="lblLoginFail" runat="server" Text="Login failed" Visible="false"></asp:Label>
                 </div>
                 <br />
                 <div class ="col-md-12">
-                   <asp:Label ID="lblOr" runat="server" Text="Or go here to Sign up" Visible="true"></asp:Label>
+                   <asp:Label ID="lblOr" runat="server" Text="Or go here to Sign up"  Visible="true"></asp:Label>
                     </div>
                 <br />
                 <div class ="col-md-12">
-                    <asp:Button ID="btnSignup" runat="server" Text="Signup" CausesValidation="False" OnClick="btnSignup_Click" />
+                    <asp:Button ID="btnSignup" runat="server" Text="Signup" CausesValidation="False" CssClass="btn btn-success" OnClick="btnSignup_Click" />
                 </div>
             </div>
 </asp:Content>

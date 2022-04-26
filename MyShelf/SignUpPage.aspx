@@ -34,8 +34,8 @@
             </div><br />
             <div class="row">
                 <div class="col-md-12">
-                    <asp:Button ID="btnCreateProfile" runat="server" OnClick="btnCreateProfile_Click" Text="Sign Up!" />
-                    <asp:Button ID="btnDebugTable" runat="server" Text="Show/Hide" OnClick="btnDebugTable_Click" CommandName="btnDebugTable_Click" CausesValidation="False" Visible="False" />
+                    <asp:Button ID="btnCreateProfile" runat="server" OnClick="btnCreateProfile_Click" CssClass="btn btn-success" Text="Sign Up!" />
+                    <asp:Button ID="btnDebugTable" runat="server" Text="Show/Hide" OnClick="btnDebugTable_Click" CssClass="btn btn-secondary" CommandName="btnDebugTable_Click" CausesValidation="False" Visible="False" />
                 </div>
                 <br />
                  <div class ="col-md-12">
@@ -43,7 +43,7 @@
                     </div>
                 <br />
                 <div class ="col-md-12">
-                    <asp:Button ID="btnLogin" runat="server" Text="Login" CausesValidation="False" OnClick="btnLogin_Click" />
+                    <asp:Button ID="btnLogin" runat="server" Text="Login" CausesValidation="False" CssClass="btn btn-primary" OnClick="btnLogin_Click" />
                 </div>
             </div> <br/> 
                 <asp:GridView ID="gvDebugTable" runat="server" Visible="false">
