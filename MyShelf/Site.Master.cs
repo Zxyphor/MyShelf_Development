@@ -26,7 +26,6 @@ namespace MyShelf
             }
             else
             {
-                //mbtnLogin.Visible = true;
                 mbtnLogin.Visible = false;
                 mbtnSignup.Visible = false;
                 mbtnLogout.Visible = false;

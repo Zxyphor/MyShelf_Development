@@ -37,15 +37,15 @@
                     <asp:Button ID="btnCreateProfile" runat="server" OnClick="btnCreateProfile_Click" CssClass="btn btn-success" Text="Sign Up!" />
                     <asp:Button ID="btnDebugTable" runat="server" Text="Show/Hide" OnClick="btnDebugTable_Click" CssClass="btn btn-secondary" CommandName="btnDebugTable_Click" CausesValidation="False" Visible="False" />
                 </div>
-                <br />
                  <div class ="col-md-12">
+                     <br />
                    <asp:Label ID="lblOr" runat="server" Text="Or go here to Log in" Visible="true"></asp:Label>
                     </div>
-                <br />
                 <div class ="col-md-12">
+                    <br />
                     <asp:Button ID="btnLogin" runat="server" Text="Login" CausesValidation="False" CssClass="btn btn-primary" OnClick="btnLogin_Click" />
                 </div>
-            </div> <br/> 
+            </div>
                 <asp:GridView ID="gvDebugTable" runat="server" Visible="false">
                 </asp:GridView>
 </asp:Content>

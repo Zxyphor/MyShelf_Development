@@ -136,6 +136,7 @@
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="LoginPage.aspx" />
     <Content Include="LogOut.aspx" />
+    <Content Include="MyShelfProfile.aspx" />
     <Content Include="SignUpPage.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -218,6 +219,13 @@
     </Compile>
     <Compile Include="LogOut.aspx.designer.cs">
       <DependentUpon>LogOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyShelfProfile.aspx.cs">
+      <DependentUpon>MyShelfProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyShelfProfile.aspx.designer.cs">
+      <DependentUpon>MyShelfProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="SignUpPage.aspx.cs">
       <DependentUpon>SignUpPage.aspx</DependentUpon>
