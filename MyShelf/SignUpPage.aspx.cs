@@ -24,11 +24,18 @@ namespace MyShelf
             {
                 AddToDatabase(txtEmail.Text.Trim(), txtUsername.Text.Trim(), txtPassword.Text.Trim());
                 UpdateTable();
+                Response.Redirect("LoginPage.aspx");
             }
         }
 
         protected void AddToDatabase(String email, String username, String password)
         {
+            string imagePath = "beegyosh.jpg";
+            if (fuProfileImage.HasFile)
+            {
+                imagePath = fuProfileImage.FileName;
+            }
+            fuProfileImage.SaveAs(Server.MapPath(Request.ApplicationPath) + "/Content/" + imagePath);
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = WebConfigurationManager.ConnectionStrings["MyShelfDB"].ConnectionString;
 
@@ -40,7 +47,7 @@ namespace MyShelf
 #pragma warning restore CS0618 // Type or member is obsolete
 
             addUser.CommandText = "INSERT INTO UserInfo (Email, Password) VALUES ('" + email + "', '" + passwordHash + "'); " +
-                "INSERT INTO ProfileInfo (Username) VALUES ('" + username + "')";
+                "INSERT INTO ProfileInfo VALUES ('" + username + "', '" + imagePath + "')";
 
             conn.Open();
             addUser.ExecuteNonQuery();
@@ -49,6 +56,7 @@ namespace MyShelf
 
         protected void UpdateTable()
         {
+           
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = WebConfigurationManager.ConnectionStrings["MyShelfDB"].ConnectionString;
             SqlDataAdapter sda = new SqlDataAdapter();
