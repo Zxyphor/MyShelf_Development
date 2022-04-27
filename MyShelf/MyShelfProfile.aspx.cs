@@ -14,6 +14,10 @@ namespace MyShelf
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["email"] == null)
+            {
+                Response.Redirect("LoginPage.aspx");
+            }
             getUserName();
 
         }

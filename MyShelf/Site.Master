@@ -52,9 +52,12 @@
                 
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
+                        <li><a runat="server" href="~/MyShelfProfile">Profile</a></li>
+                        <li><a runat="server" href="~/FriendAddPage">Friends</a></li>
+                        <li><a runat="server" href="~/GameAddPage">Add To Shelf</a></li>
                         <li><asp:Button ID="mbtnLogin" runat="server" Text="Login" CausesValidation="False" OnClick="mbtnLogin_Click" /></li>
                         <li><asp:Button ID="mbtnSignup" runat="server" Text="Signup" CausesValidation="False" OnClick="mbtnSignup_Click" /></li>
-                        <li><asp:Button ID="mbtnLogout" runat="server" Text="Logout" CausesValidation="False" OnClick="mbtnLogout_Click" /></li>
+                        <li><asp:Button ID="mbtnLogout" runat="server" Text="Logout" CausesValidation="False" OnClick="mbtnLogout_Click" CssClass="btn btn-primary" /></li>                   
                     </ul>
                 </div>
             </div>
