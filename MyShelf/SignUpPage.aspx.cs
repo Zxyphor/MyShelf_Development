@@ -24,6 +24,7 @@ namespace MyShelf
             {
                 AddToDatabase(txtEmail.Text.Trim(), txtUsername.Text.Trim(), txtPassword.Text.Trim());
                 UpdateTable();
+                Response.Redirect("MyShelfProfile.aspx");
             }
         }
 

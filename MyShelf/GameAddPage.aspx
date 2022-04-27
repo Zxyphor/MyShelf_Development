@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="GameAddPage.aspx.cs" Inherits="MyShelf.GameAddPage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <h2 class="left-justify">Add some games broskie</h2>
     <div class="row">
         <div class="col-md-2">
             <asp:Label ID="lblGameInput" runat="server" Text="Enter game name here:"></asp:Label>
