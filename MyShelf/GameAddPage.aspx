@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="GameAddPage.aspx.cs" Inherits="MyShelf.GameAddPage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h2 class="left-justify">Add some games broskie</h2>
+    <h2 class="left-justify">Add some games bro</h2>
     <div class="row">
         <div class="col-md-2">
             <asp:Label ID="lblGameInput" runat="server" Text="Enter game name here:"></asp:Label>
@@ -17,7 +17,8 @@
                 <asp:BoundField DataField="GameName" HeaderText="Game" />
                 <asp:TemplateField HeaderText="Actions">
                     <ItemTemplate>
-                        <asp:Button ID="btnDeleteEntry" runat="server" CssClass="btn btn-danger" Text="X" CommandName="DeleteEntry" CausesValidation="False" />
+                        <asp:Button ID="btnDeleteEntry" runat="server" CssClass="btn btn-danger" Text="X" CommandName="DeleteEntry" CausesValidation="False" 
+                            OnClientClick="return confirm('Delete this game?')" />
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
