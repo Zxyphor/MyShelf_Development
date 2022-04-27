@@ -39,7 +39,7 @@ namespace MyShelf
                 if (sdr.Read())
                 {
                     Session["email"] = sdr["UserID"].ToString();
-                    Response.Redirect("GameAddPage.aspx");
+                    Response.Redirect("MyShelfProfile.aspx");
                 } else
                 {
                     lblLoginFail.Visible = true;

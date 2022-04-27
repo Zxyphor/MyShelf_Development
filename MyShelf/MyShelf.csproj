@@ -120,6 +120,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="FriendAddPage.aspx" />
     <Content Include="GameAddPage.aspx" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -196,6 +197,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FriendAddPage.aspx.cs">
+      <DependentUpon>FriendAddPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FriendAddPage.aspx.designer.cs">
+      <DependentUpon>FriendAddPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="GameAddPage.aspx.cs">
       <DependentUpon>GameAddPage.aspx</DependentUpon>
