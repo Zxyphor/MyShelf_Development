@@ -119,6 +119,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="FriendAddPage.aspx" />
     <Content Include="GameAddPage.aspx" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -136,6 +137,7 @@
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="LoginPage.aspx" />
     <Content Include="LogOut.aspx" />
+    <Content Include="MyShelfProfile.aspx" />
     <Content Include="SignUpPage.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -195,6 +197,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="FriendAddPage.aspx.cs">
+      <DependentUpon>FriendAddPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FriendAddPage.aspx.designer.cs">
+      <DependentUpon>FriendAddPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GameAddPage.aspx.cs">
       <DependentUpon>GameAddPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -218,6 +227,13 @@
     </Compile>
     <Compile Include="LogOut.aspx.designer.cs">
       <DependentUpon>LogOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyShelfProfile.aspx.cs">
+      <DependentUpon>MyShelfProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyShelfProfile.aspx.designer.cs">
+      <DependentUpon>MyShelfProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="SignUpPage.aspx.cs">
       <DependentUpon>SignUpPage.aspx</DependentUpon>

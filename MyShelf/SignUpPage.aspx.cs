@@ -11,12 +11,12 @@ using System.Web.Security;
 
 namespace MyShelf
 {
-	public partial class LoginPage : System.Web.UI.Page
-	{
-		protected void Page_Load(object sender, EventArgs e)
-		{
+    public partial class LoginPage : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
             UpdateTable();
-		}
+        }
 
         protected void btnCreateProfile_Click(object sender, EventArgs e)
         {
@@ -24,11 +24,34 @@ namespace MyShelf
             {
                 AddToDatabase(txtEmail.Text.Trim(), txtUsername.Text.Trim(), txtPassword.Text.Trim());
                 UpdateTable();
+                using (SqlConnection conn = new SqlConnection())
+                {
+#pragma warning disable CS0618 // Type or member is obsolete
+                    string HashedPW = FormsAuthentication.HashPasswordForStoringInConfigFile(txtPassword.Text.Trim(), "SHA1");
+#pragma warning restore CS0618 // Type or member is obsolete
+                    conn.ConnectionString = WebConfigurationManager.ConnectionStrings["MyShelfDB"].ConnectionString;
+                    SqlCommand checkUser = new SqlCommand();
+                    checkUser.Connection = conn;
+                    checkUser.CommandText = "SELECT UserID FROM UserInfo WHERE Email ='" + txtEmail.Text.Trim() + "' AND Password = '" + HashedPW + "';";
+                    conn.Open();
+                    SqlDataReader sdr = checkUser.ExecuteReader();
+                    if (sdr.Read())
+                    {
+                        Session["email"] = sdr["UserID"].ToString();
+                        Response.Redirect("MyShelfProfile.aspx");
+                    }
+                }
             }
         }
 
         protected void AddToDatabase(String email, String username, String password)
         {
+            string imagePath = "beegyosh.jpg";
+            if (fuProfileImage.HasFile)
+            {
+                imagePath = fuProfileImage.FileName;
+            }
+            fuProfileImage.SaveAs(Server.MapPath(Request.ApplicationPath) + "/Content/" + imagePath);
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = WebConfigurationManager.ConnectionStrings["MyShelfDB"].ConnectionString;
 
@@ -40,7 +63,7 @@ namespace MyShelf
 #pragma warning restore CS0618 // Type or member is obsolete
 
             addUser.CommandText = "INSERT INTO UserInfo (Email, Password) VALUES ('" + email + "', '" + passwordHash + "'); " +
-                "INSERT INTO ProfileInfo (Username) VALUES ('" + username + "')";
+                "INSERT INTO ProfileInfo (Username, ProfilePicture) VALUES ('" + username + "', '" + imagePath + "');";
 
             conn.Open();
             addUser.ExecuteNonQuery();
@@ -71,6 +94,10 @@ namespace MyShelf
         {
             gvDebugTable.Visible = !gvDebugTable.Visible;
             UpdateTable();
+        }
+        protected void btnLogin_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("LoginPage.aspx");
         }
     }
 }

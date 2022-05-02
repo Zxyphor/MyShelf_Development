@@ -31,13 +31,24 @@
                     <asp:TextBox ID="txtPasswordConfirm" runat="server" TextMode="Password"></asp:TextBox>
                     <asp:CompareValidator ID="cpvConfirmPassword" runat="server" ControlToCompare="txtPasswordConfirm" ControlToValidate="txtPassword" ErrorMessage="Passwords do not match." SetFocusOnError="True" ValidationGroup="ConfirmPassword"></asp:CompareValidator>
                 </div>
+                 <div class ="col-md-10">
+                     <asp:FileUpload ID="fuProfileImage" runat="server" ClientIDMode="Static" CssClass="form-control-file" />
+                 </div>
             </div><br />
             <div class="row">
                 <div class="col-md-12">
-                    <asp:Button ID="btnCreateProfile" runat="server" OnClick="btnCreateProfile_Click" Text="Sign Up!" />
-                    <asp:Button ID="btnDebugTable" runat="server" Text="Show/Hide" OnClick="btnDebugTable_Click" CommandName="btnDebugTable_Click" CausesValidation="False" Visible="False" />
+                    <asp:Button ID="btnCreateProfile" runat="server" OnClick="btnCreateProfile_Click" CssClass="btn btn-success" Text="Sign Up!" />
+                    <asp:Button ID="btnDebugTable" runat="server" Text="Show/Hide" OnClick="btnDebugTable_Click" CssClass="btn btn-secondary" CommandName="btnDebugTable_Click" CausesValidation="False" Visible="False" />
                 </div>
-            </div> <br/> 
+                 <div class ="col-md-12">
+                     <br />
+                   <asp:Label ID="lblOr" runat="server" Text="Or go here to Log in" Visible="true"></asp:Label>
+                    </div>
+                <div class ="col-md-12">
+                    <br />
+                    <asp:Button ID="btnLogin" runat="server" Text="Login" CausesValidation="False" CssClass="btn btn-primary" OnClick="btnLogin_Click" />
+                </div>
+            </div>
                 <asp:GridView ID="gvDebugTable" runat="server" Visible="false">
                 </asp:GridView>
 </asp:Content>
