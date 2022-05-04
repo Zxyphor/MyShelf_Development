@@ -43,7 +43,7 @@ namespace MyShelf
                 {
                     conn.ConnectionString = WebConfigurationManager.ConnectionStrings["MyShelfDB"].ConnectionString;
                     SqlCommand cmd = new SqlCommand();
-                    cmd.CommandText = "WITH friends as (SELECT UserID FROM ProfileInfo WHERE Username = '" + e.CommandArgument.ToString() + "') DELETE FROM FriendInfo WHERE FriendID = (SELECT DISTINCT FriendID FROM FriendInfo JOIN friends ON FriendInfo.FriendID = friends.UserID);";
+                    cmd.CommandText = "WITH friends as (SELECT UserID FROM ProfileInfo WHERE Username = '" + e.CommandArgument.ToString() + "') DELETE FROM FriendInfo WHERE GameID = (SELECT DISTINCT GameID FROM FriendInfo JOIN friends ON FriendInfo.GameID = friends.UserID);";
                     cmd.Connection = conn;
                     conn.Open();
 
