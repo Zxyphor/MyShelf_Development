@@ -20,13 +20,13 @@ namespace MyShelf
             }
             if (Session["email"] != null)
             {
-                mbtnLogin.Visible = false;
-                mbtnSignup.Visible = false;
+                mbtnLogin.Visible = true;
+                mbtnSignup.Visible = true;
                 mbtnLogout.Visible = true;
             } else
             {
-                mbtnLogin.Visible = true;
-                mbtnSignup.Visible = true;
+                mbtnLogin.Visible = false;
+                mbtnSignup.Visible = false;
                 mbtnLogout.Visible = false;
             }
         }
@@ -35,12 +35,12 @@ namespace MyShelf
 
         protected void mbtnLogin_Click(object sender, EventArgs e)
         {
-            Response.Redirect("LoginPage.aspx");
+            Response.Redirect("FriendAddPage.aspx");
         }
 
         protected void mbtnSignup_Click(object sender, EventArgs e)
         {
-            Response.Redirect("SignUpPage.aspx");
+            Response.Redirect("GameAddPage.aspx");
         }
 
         protected void mbtnLogout_Click(object sender, EventArgs e)

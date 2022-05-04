@@ -46,7 +46,7 @@
                     </div>
                 <div class ="col-md-12">
                     <br />
-                    <asp:Button ID="btnLogin" runat="server" Text="Login" CausesValidation="False" CssClass="btn btn-primary" OnClick="btnLogin_Click" />
+                    <asp:Button ID="btnLogin" runat="server" Text="Log In!" CausesValidation="False" CssClass="btn btn-primary" OnClick="btnLogin_Click" />
                 </div>
             </div>
                 <asp:GridView ID="gvDebugTable" runat="server" Visible="false">

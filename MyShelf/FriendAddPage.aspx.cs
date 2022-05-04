@@ -64,7 +64,7 @@ namespace MyShelf
             SqlCommand updateTable = new SqlCommand();
             updateTable.Connection = conn;
 
-            updateTable.CommandText = "WITH friends as (SELECT FriendID FROM FriendInfo WHERE UserID = '" + int.Parse(Session["email"].ToString()) + "') SELECT Username FROM ProfileInfo JOIN friends ON ProfileInfo.UserID = friends.FriendID;";
+            updateTable.CommandText = "WITH friends as (SELECT GameID FROM FriendInfo WHERE UserID = '" + int.Parse(Session["email"].ToString()) + "') SELECT Username FROM ProfileInfo JOIN friends ON ProfileInfo.UserID = friends.GameID;";
             sda.SelectCommand = updateTable;
 
             conn.Open();
@@ -83,7 +83,7 @@ namespace MyShelf
             addEntry.Connection = conn;
 
 
-            addEntry.CommandText = "INSERT INTO FriendInfo (FriendID, UserID) VALUES ('" + txtFriendInput.Text.Trim() + "', '" + int.Parse(Session["email"].ToString()) + "'); ";
+            addEntry.CommandText = "INSERT INTO FriendInfo (GameID, UserID) VALUES ('" + txtFriendInput.Text.Trim() + "', '" + int.Parse(Session["email"].ToString()) + "'); ";
 
             conn.Open();
             addEntry.ExecuteNonQuery();

@@ -14,7 +14,10 @@ namespace MyShelf
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["email"] != null)
+            {
+                Response.Redirect("MyShelfProfile.aspx");
+            }
         }
 
         protected void btnLogIn_Click(object sender, EventArgs e)
@@ -42,6 +45,11 @@ namespace MyShelf
                 }
                 
             }
+        }
+
+        protected void btnSignUp_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("SignUpPage.aspx");
         }
     }
 }

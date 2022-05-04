@@ -19,7 +19,8 @@ namespace MyShelf
                 Response.Redirect("LoginPage.aspx");
             }
             getUserName();
-
+            UpdateFriendTable();
+            UpdateGameTable();
         }
 
         protected void getUserName()
@@ -45,6 +46,43 @@ namespace MyShelf
 
 
         }
+        protected void UpdateGameTable()
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = WebConfigurationManager.ConnectionStrings["MyShelfDB"].ConnectionString;
+            SqlDataAdapter sda = new SqlDataAdapter();
+            DataTable dt = new DataTable();
 
+            SqlCommand updateTable = new SqlCommand();
+            updateTable.Connection = conn;
+
+            updateTable.CommandText = "SELECT GameName FROM ShelfInfo WHERE UserID = '" + int.Parse(Session["email"].ToString()) + "';";
+            sda.SelectCommand = updateTable;
+
+            conn.Open();
+            sda.Fill(dt);
+            gvGameList.DataSource = dt;
+            gvGameList.DataBind();
+            conn.Close();
+        }
+        protected void UpdateFriendTable()
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = WebConfigurationManager.ConnectionStrings["MyShelfDB"].ConnectionString;
+            SqlDataAdapter sda = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+
+            SqlCommand updateTable = new SqlCommand();
+            updateTable.Connection = conn;
+
+            updateTable.CommandText = "WITH Friends as (SELECT GameID FROM FriendInfo WHERE UserID = '" + int.Parse(Session["email"].ToString()) + "') SELECT Username FROM ProfileInfo JOIN friends ON ProfileInfo.UserID = friends.GameID;";
+            sda.SelectCommand = updateTable;
+
+            conn.Open();
+            sda.Fill(dt);
+            gvFriendList.DataSource = dt;
+            gvFriendList.DataBind();
+            conn.Close();
+        }
     }
 }

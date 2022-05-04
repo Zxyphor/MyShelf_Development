@@ -46,7 +46,7 @@ namespace MyShelf
 
         protected void AddToDatabase(String email, String username, String password)
         {
-            string imagePath = "beegyosh.jpg";
+            string imagePath = "beegyoshi.png";
             if (fuProfileImage.HasFile)
             {
                 imagePath = fuProfileImage.FileName;

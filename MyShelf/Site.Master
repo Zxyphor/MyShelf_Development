@@ -52,9 +52,9 @@
 <%--                        <li><a runat="server" href="~/LoginPage">Login Page</a></li>
                         <li><a runat="server" href="~/SignUpPage">Sign-Up Page</a></li>
                         <li><a runat="server" href="~/LogOut">Log Out</a></li>--%>
-                        <li><asp:Button ID="mbtnLogin" runat="server" Text="Login" CausesValidation="False" OnClick="mbtnLogin_Click" /></li>
-                        <li><asp:Button ID="mbtnSignup" runat="server" Text="Signup" CausesValidation="False" OnClick="mbtnSignup_Click" /></li>
-                        <li><asp:Button ID="mbtnLogout" runat="server" Text="Logout" CausesValidation="False" OnClick="mbtnLogout_Click" /></li>
+                        <li><asp:Button ID="mbtnLogin" runat="server" Text="Add Friends" CausesValidation="False" CssClass="btn btn-primary" OnClick="mbtnLogin_Click" Visible="False" /></li>
+                        <li><asp:Button ID="mbtnSignup" runat="server" Text="Add Games" CausesValidation="False" CssClass="btn btn-primary" OnClick="mbtnSignup_Click" Visible="False" /></li>
+                        <li><asp:Button ID="mbtnLogout" runat="server" Text="Logout" CausesValidation="False" CssClass="btn btn-primary" OnClick="mbtnLogout_Click" Visible="False" /></li>
 <%--                        <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>--%>
                     </ul>
