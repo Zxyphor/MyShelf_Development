@@ -15,6 +15,15 @@ namespace MyShelf
     {
 
         /// <summary>
+        /// mbtnProfile control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button mbtnProfile;
+
+        /// <summary>
         /// mbtnLogin control.
         /// </summary>
         /// <remarks>

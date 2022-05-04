@@ -20,11 +20,13 @@ namespace MyShelf
             }
             if (Session["email"] != null)
             {
+                mbtnProfile.Visible = true;
                 mbtnLogin.Visible = true;
                 mbtnSignup.Visible = true;
                 mbtnLogout.Visible = true;
             } else
             {
+                mbtnProfile.Visible = false;
                 mbtnLogin.Visible = false;
                 mbtnSignup.Visible = false;
                 mbtnLogout.Visible = false;
@@ -47,6 +49,11 @@ namespace MyShelf
         {
             Session.Remove("email");
             Response.Redirect("LoginPage.aspx");
+        }
+
+        protected void mbtnProfile_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("MyShelfProfile.aspx");
         }
 
         //protected void UpdateTable()
